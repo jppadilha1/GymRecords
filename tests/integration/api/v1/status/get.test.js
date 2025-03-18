@@ -4,7 +4,7 @@ test("get to api/v1/status should be return 200", async function () {
 
   const responseBody = await response.json();
 
-  updatedAtParseISO = new Date(responseBody.updated_at).toISOString();
+  const updatedAtParseISO = new Date(responseBody.updated_at).toISOString();
   expect(responseBody.updated_at).toBe(updatedAtParseISO);
 
   expect(responseBody.dependencies.database.version).toBe("16.0");
